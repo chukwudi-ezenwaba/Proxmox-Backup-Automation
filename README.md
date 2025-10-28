@@ -20,14 +20,17 @@ The script performs the following:
    cd proxmox-backup-automation
 
 2. Copy the script to your server
-sudo cp scripts/proxmox_daily_backup.sh /usr/local/bin/
-sudo chmod +x /usr/local/bin/proxmox_daily_backup.sh
+    ```bash
+    sudo cp scripts/proxmox_daily_backup.sh /usr/local/bin/
+    sudo chmod +x /usr/local/bin/proxmox_daily_backup.sh
 
 3. Update the config file:
-nano config/sample_env.conf
+    ```bash
+    nano config/sample_env.conf
 
 4. (Optional) Schedule with cron:
-0 3 * * * /usr/local/bin/proxmox_daily_backup.sh >> /var/log/proxmox_backup.log 2>&1
+    ```bash
+    0 3 * * * /usr/local/bin/proxmox_daily_backup.sh >> /var/log/proxmox_backup.log 2>&1
 
 ## Recovery
 See docs/RECOVERY_WORKFLOW.md for how to restore Proxmox configs or VMs.
